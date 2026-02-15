@@ -166,6 +166,13 @@ oci os object head `
   --name "iam-policy-drift-audit/<artifact-file-name>"
 ```
 
+## Output
+<img width="868" height="140" alt="image" src="https://github.com/user-attachments/assets/b9caf140-b4f6-473a-9c03-287ac8909f33" />
+<img width="1919" height="992" alt="image" src="https://github.com/user-attachments/assets/1d6fa21f-86f5-433f-9dde-7802e16c9204" />
+
+
+
+
 ## Troubleshooting
 
 - `python` not found: install Python 3.10+ or use `py -3`
@@ -177,3 +184,4 @@ oci os object head `
 - Read-only calls to Identity and Audit APIs
 - Only write operation is Object Storage upload
 - No create/update/delete operations on OCI resources
+
