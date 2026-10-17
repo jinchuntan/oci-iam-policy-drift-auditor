@@ -100,6 +100,27 @@ Copy-Item .env.example .env
 
 If `python` command is unavailable, use `py -3`.
 
+## Configuration Before the First Run
+
+Copy `.env.example` to `.env` once, then edit `.env` before running. Preserve an
+existing `.env` when updating. The template documents every supported setting
+and uses the same defaults as the application's configuration loader.
+
+- Leave `OCI_CONFIG_FILE` unset to use `~/.oci/config`; use an absolute path if overriding it.
+- A blank `OCI_ROOT_COMPARTMENT_OCID` selects the tenancy. Set a compartment OCID
+  and adjust `OCI_INCLUDE_SUBCOMPARTMENTS` to limit the scan.
+- To upload only to a chosen bucket, set `OCI_OBJECT_STORAGE_BUCKET` and
+  `OCI_AUTO_DISCOVER_BUCKET=false`. Otherwise, the tool may try other discovered
+  buckets if the first upload fails. It does not create buckets.
+- `OCI_OUTPUT_DIR` defaults to `output/`. `OCI_FAIL_ON_UPLOAD_ERROR=true` makes
+  upload failures return a nonzero exit code; local reports remain available.
+- For a first run that only writes reports locally, use
+  `.\.venv\Scripts\python.exe run_audit.py --skip-upload` after installing dependencies.
+  This still calls OCI to collect data and requires a configured SDK profile.
+
+`.env`, signing keys, virtual environments and generated report folders are
+ignored by Git. The example template remains tracked.
+
 ## Environment Variables
 
 See `.env.example`.
