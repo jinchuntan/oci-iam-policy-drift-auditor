@@ -1,0 +1,15 @@
+# Local configuration and OCI signing keys
+.env
+.env.*
+!.env.example
+.oci/
+*.pem
+*.key
+
+# Virtual environments, Python caches and generated reports
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+reports/
+output/
